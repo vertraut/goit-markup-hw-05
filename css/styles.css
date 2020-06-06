@@ -14,6 +14,7 @@ cиний #2196F3
   --accent-color: #2196f3;
   --light-color: #ffffff;
   --dark-color: #212121;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -30,6 +31,11 @@ h4,
 h5,
 h6 {
   color: var(--dark-color);
+}
+
+a,
+button {
+  transition: color 250ms var(--cubic), background-color 250ms var(--cubic);
 }
 
 .visually-hidden {
@@ -701,6 +707,7 @@ section.portfolio {
 
 .element-thumb {
   position: relative;
+  overflow: hidden;
 }
 .element-disc {
   display: flex;
@@ -709,6 +716,7 @@ section.portfolio {
   height: 100%;
   margin: 0;
   padding: 24px;
+  transform: translateY(100%);
   align-items: center;
 
   background-color: rgba(33, 150, 243, 0.9);
@@ -718,11 +726,13 @@ section.portfolio {
   line-height: 1.56;
   letter-spacing: 0.03em;
 
-  opacity: 0;
+  opacity: 0.5;
+  transition: opacity 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .examples li:hover .element-disc {
   opacity: 1;
+  transform: translateY(0%);
 }
 
 .element-title {
