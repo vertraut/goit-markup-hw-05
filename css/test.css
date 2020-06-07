@@ -1,8 +1,53 @@
-.advanages-icon-block {
-  background-color: #f3f3f3;
+a {
+  display: inline-block;
+  padding: 30px 30px;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  color: #292929;
+  transition: color 250ms linear;
 }
 
-.advanages-icon {
-  width: 70px;
-  height: 70px;
+.menu {
+  display: flex;
+}
+
+a::before,
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #003cff;
+}
+
+a::before {
+  transform: translateX(-100%);
+}
+
+a::after {
+  transform: translateX(100%);
+  transition: transform 250ms linear;
+}
+
+.button {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+a:hover {
+  color: #003cff;
+}
+
+a:hover::before {
+  transform: translateX(0);
+  transition: transform 250ms linear;
+}
+
+a:hover::after {
+  transform: translateX(0);
+  transition: transform 0ms linear 250ms;
 }
